@@ -1,22 +1,19 @@
 import React, { useState } from 'react'
-import{Form, Input, Button} from 'antd-mobile'
+import{Form, Input, Button, Toast} from 'antd-mobile'
 import styles from './login.css'
 
-export default function LoginPage() {
-
-    const [username, setUsername] = useState('user')
-    const [password, setPassword] = useState('psw')
-
-    const onFinish =(values: {username:string, password:string}):void =>{
-        console.log('接受到的数据为：',values)
-    }
+/**
+ * 登录页面表单组件
+ * 包括：输入用户名，输入密码，忘记密码，提交按钮
+ */
+const LoginForm = (props: { onFinish: ((values: any) => void)})=>{
 
     return(
         <div className={styles.login}>
-            <div className={styles.login_form_title}>欢迎登陆</div>
             <Form layout="horizontal" 
             className='login_form'
-            onFinish={onFinish}
+            onFinish={props.onFinish} //提交表单并验证成功
+            // onFinishFailed = {props.onFinishFailed} //提交表单但验证失败
             name='login_form'
             footer={
                 <div className={styles.login_form_footer}>
@@ -34,3 +31,5 @@ export default function LoginPage() {
         </div>
     )
 }
+
+export default LoginForm

@@ -1,21 +1,25 @@
+.login_form_title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 108px;
+  margin-left: 23px;
+}
 .login {
-  margin: 108px auto;
+  margin: 48px auto;
   max-width: 330px;
   font-family: PingFangSC-Regular;
   font-size: 14px;
 }
-.login_form_title {
-  font-size: 18px;
-  font-weight: 800;
-  margin-bottom: 48px;
-}
 .login_form_forget_psw {
   float: right;
   color: #1890FF;
-  margin-bottom: 50px;
+  margin-bottom: 103px;
 }
 .login_form_footer {
   margin-top: 8px;
+}
+.login_form_btn {
+  margin-top: 103px;
 }
 :global .login_form .adm-list-body {
   border: none;
@@ -38,9 +42,9 @@
   border-top: none;
 }
 :global .login_form .adm-button {
-  font-size: 14px;
-  padding: 14px 12px;
   background-color: #1890FF;
-  border-radius: 8px;
   color: #FFF;
+  font-size: 14px;
+  padding: 14px 0;
+  border-radius: 8px;
 }
