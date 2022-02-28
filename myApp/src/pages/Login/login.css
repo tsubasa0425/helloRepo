@@ -1,0 +1,46 @@
+.login {
+  margin: 108px auto;
+  max-width: 330px;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+}
+.login_form_title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 48px;
+}
+.login_form_forget_psw {
+  float: right;
+  color: #1890FF;
+  margin-bottom: 50px;
+}
+.login_form_footer {
+  margin-top: 8px;
+}
+:global .login_form .adm-list-body {
+  border: none;
+}
+:global .login_form .adm-list-item {
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 0;
+  padding-right: 0;
+}
+:global .login_form .adm-input-element {
+  font-size: 14px;
+}
+:global .login_form .adm-form-footer {
+  padding: 0;
+}
+:global .login_form .adm-list-item-content {
+  margin-top: 16px;
+  border-bottom: var(--border-inner);
+  border-top: none;
+}
+:global .login_form .adm-button {
+  font-size: 14px;
+  padding: 14px 12px;
+  background-color: #1890FF;
+  border-radius: 8px;
+  color: #FFF;
+}
