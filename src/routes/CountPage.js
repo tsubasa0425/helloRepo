@@ -4,18 +4,26 @@ import styles from './CountPage.css'
 class CountPage extends React.Component {
     render() {
 
-        const { dispatch } = this.props
+        const { dispatch , count } = this.props
+        console.log(count)
 
         return(
             <div className={styles.normal}>
-                <div className={styles.record}>Highest Reacord: 1</div>
-                <div className={styles.current}>2</div>
+                <div className={styles.record}>Highest Reacord: {count.record}</div>
+                <div className={styles.current}>{count.current}</div>
                 <div className={styles.button}>
-                    <button onClick={()=>{}}>+</button>
+                    {/* 通过 + 发送 action */}
+                    <button 
+                        onClick={()=>{ dispatch({type: 'count/add'}) }}
+                    >+</button> 
                 </div>
             </div>
         )
     }
 }
 
-export default connect()(CountPage)
+function mapStateToProps(state) {
+    return { count: state }
+} //获取state
+
+export default connect(mapStateToProps)(CountPage)

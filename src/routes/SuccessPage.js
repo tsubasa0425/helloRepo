@@ -9,6 +9,9 @@ class SuccessPage extends React.Component {
         super(props)
         this.dispatch = this.props.dispatch
     }
+    /** 
+     * 点击“返回登录”按钮，返回欢迎登陆界面
+     *  */
     handleClick = ()=>{
         // console.log('返回')
         // console.log(this.props.login.first)
@@ -36,4 +39,8 @@ class SuccessPage extends React.Component {
     }
 }
 
-export default connect(({login})=>({login}))(SuccessPage)
+function mapStateToProps(state) {
+    return{ login: state }
+} //获取state
+
+export default connect(mapStateToProps)(SuccessPage)

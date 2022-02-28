@@ -27,6 +27,10 @@ class LoginPage extends React.Component {
         } 
     }
 
+    /**
+     * 登录成功就跳转到成功页面
+     */
+
     LoginSuccess = ()=>{
         this.dispatch(routerRedux.push({
             pathname:'/success',
@@ -37,7 +41,7 @@ class LoginPage extends React.Component {
     }
     
     render(){
-        if(this.props.login.first){
+        if(this.props.login.first){ //如果是第一次登录，欢迎登陆页面
             return(
                 <div>
                     <div className={styles.login_form_title}>欢迎登陆</div>
@@ -62,7 +66,7 @@ class LoginPage extends React.Component {
                     </div>
                 </div>
             )
-        } else {
+        } else { // 登录失败，渲染提示框
             return(
                 <div>
                     <WarnMsg />
@@ -91,9 +95,8 @@ class LoginPage extends React.Component {
     }
 }
 
+function mapStateToProps(state) {
+    return { login: state }
+} // 获取state
 
-export default connect(({ login })=>{
-    // console.log('login', login)
-    return ({
-    login
-})})(LoginPage)
+export default connect(mapStateToProps)(LoginPage)
